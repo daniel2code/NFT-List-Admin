@@ -1,0 +1,10 @@
+#box{
+    height: 300px;
+    width: 300px;
+    background-color: blue;
+}
+
+.name{
+    font-size: 30px;
+    color: red;
+}

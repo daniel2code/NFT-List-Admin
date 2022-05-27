@@ -1,0 +1,25 @@
+.wrapper-box {
+  width: 100%;
+}
+
+.wrapper-nav {
+  width: 100%;
+  position: fixed;
+}
+
+.wrapper-body {
+  display: flex;
+}
+
+.wrapper-sidebar {
+  width: 230px;
+  position: fixed;
+  top: 70px;
+}
+
+.wrapper-content {
+  /* padding: 30px; */
+  width: calc(100% - 230px);
+  margin-left: 230px;
+  margin-top: 70px;
+}

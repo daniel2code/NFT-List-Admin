@@ -1,0 +1,33 @@
+.report-modal-container {
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0 0 0 / 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .report-modal-box {
+    width: 600px;
+    /* height: 450px; */
+    /* overflow-y: scroll; */
+    /* background-color: #000; */
+  }
+
+  .modal-card {
+    width: 100%;
+    border-radius: 15px;
+    background-color: blueviolet;
+    color: white;
+    padding: 20px;
+  }
+
+  .report-modal-btn{
+      background-color: #000;
+      width: 150px;
+      height: 50px;
+      border-radius: 15px;
+      color: white;
+  }

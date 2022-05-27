@@ -1,0 +1,15 @@
+.sidebar-container{
+    width: 100%;
+    background-color: #353945;
+    height: calc(100vh - 70px);
+    padding-left: 20px;
+    padding-top: 30px;
+}
+
+.sidebar-box{
+   
+}
+
+.sidebar-list-item{
+    cursor: pointer;
+}
