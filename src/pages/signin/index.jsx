@@ -45,7 +45,7 @@ const Index = () => {
       signInWithEmailAndPassword(auth, state.email, state.password)
         .then((userCredential) => {
           // Signed in
-          const user = userCredential.user;
+          // const user = userCredential.user;
           changeRoute()
           // ...
         })
