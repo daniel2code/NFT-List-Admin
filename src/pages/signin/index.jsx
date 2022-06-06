@@ -1,12 +1,12 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useState } from "react";
 import "./signin.css";
 
 import { ToastContainer, toast } from "react-toastify";
-// import ClipLoader from "react-spinners/ClipLoader";
+import ClipLoader from "react-spinners/ClipLoader";
 // import { usePostRequest } from "../../requests/api";
 import { useNavigate } from "react-router-dom";
-import { auth } from '../../firebase'
-import { signInWithEmailAndPassword } from 'firebase/auth'
+import { auth } from "../../firebase";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 // login details : email = admin@admin.com, password= admin-@12345
 
@@ -18,7 +18,7 @@ const Index = () => {
     };
   };
   const [state, setState] = useReducer(reducer, {});
-  // const { postRequest, loading, errMsg } = usePostRequest();
+  const[loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const changeRoute = () => {
@@ -36,34 +36,36 @@ const Index = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setLoading(true)
 
     if (!state.email || !state.password) {
       notify("Inputs must not be empty");
+      setLoading(false)
     } else {
-      // console.log(state);
-      // postRequest("/login", changeRoute, notify(errMsg));
       signInWithEmailAndPassword(auth, state.email, state.password)
         .then((userCredential) => {
           // Signed in
           // const user = userCredential.user;
-          changeRoute()
+          setLoading(false)
+          changeRoute();
           // ...
         })
         .catch((error) => {
           // const errorCode = error.code;
           // const errorMessage = error.message;
-          alert(error.message)
+          alert(error.message);
+          setLoading(false)
         });
     }
   };
 
   return (
     <div className="report-two">
-      {/* {loading && (
+      {loading && (
         <div className="signin-loader">
           <ClipLoader color="white" loading={loading} size={150} />
         </div>
-      )} */}
+      )}
       <div className="form-container">
         <h1 className="page-title">Login To Admin</h1>
 

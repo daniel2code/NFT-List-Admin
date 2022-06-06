@@ -9,6 +9,17 @@
   justify-content: center;
 }
 
+.modal-loader {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0 0 0 / 0.7);
+}
+
 .modal-box {
   width: 600px;
   height: 450px;
@@ -32,4 +43,12 @@
   width: 170px;
   background-color: red;
   border-radius: 15px;
+}
+
+.btn3{
+  height: 45px;
+  width: 100%;
+  background-color: black;
+  border-radius: 15px;
+  margin-top: 20px;
 }

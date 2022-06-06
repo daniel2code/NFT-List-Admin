@@ -8,14 +8,9 @@ import { FaLongArrowAltRight, FaCheckDouble, FaTwitter } from "react-icons/fa";
 import { IoIosSettings } from "react-icons/io";
 
 import nftImg from "../../../assets/snft.webp";
-// import { useGetRequest } from "../../../requests/api";
 
 const Index = ({ data, reports }) => {
-  // const { getRequest } =useGetRequest()
 
-  // useEffect(()=>{
-  //   // getRequest('/all-nftarts')
-  // })
   const filterData = data?.filter((item) => item.approved === false)
 
   const [nftData, setNftData] = useState(null);
@@ -68,15 +63,15 @@ const Index = ({ data, reports }) => {
 
           <div className="flex flex-col gap-y-5">
             {data?.map((item) => {
-              console.log(item)
               return (
                 <div
                   className="flex justify-between items-center nft-list-card"
                   onClick={() => setNftData(item)}
+                  key={item.id}
                 >
                   <div className="flex items-center">
-                    <img src={nftImg} alt="nft display" className="nft-img" />
-                    <p className="text-lg ml-5">3D Intergalactic Pandas</p>
+                    <img src={item?.photo || nftImg} alt="nft display" className="nft-img" />
+                    <p className="text-lg ml-5">{item.title}</p>
                   </div>
 
                   <div className="flex gap-x-3">
@@ -84,7 +79,7 @@ const Index = ({ data, reports }) => {
                     <FaTwitter />
                   </div>
 
-                  <p className="text-lg">May 05, 15:00</p>
+                  <p className="text-lg">{item.start_date}</p>
 
                   <p className="text-lg">Mint</p>
 

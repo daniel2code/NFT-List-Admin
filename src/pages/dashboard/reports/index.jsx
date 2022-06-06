@@ -11,8 +11,6 @@ const Index = ({ reports }) => {
     setReportData(data);
   };
 
-  console.log(reportData);
-
   return (
     <Wrapper>
       {reportData && <Modal setReportData={setReportData} data={reportData} />}

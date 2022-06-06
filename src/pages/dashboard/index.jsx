@@ -41,13 +41,11 @@ const Index = () => {
     };
 
     async function resolveRequests() {
-       await Promise.all([fetchData(), fetchReports()]);
+      await Promise.all([fetchData(), fetchReports()]);
     }
 
     resolveRequests();
   }, []);
-
-  console.log(data, reports);
 
   return (
     // <Wrapper>
